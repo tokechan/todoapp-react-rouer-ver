@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css'
+import Layout from './components/Layout'
+import TodoList from './components/TodoList'
+import TodoDetail from './components/TodoDetail'
+import TodoForm from './components/TodoForm'
 
 function App() {
   return (
@@ -12,9 +14,9 @@ function App() {
           <Route index element={<TodoList />} />
           <Route path="todos" element={<TodoList />} />
           <Route path="todos/:id" element={<TodoDetail />} />
-          <Route path="todos/:id/edit" element={<TodoEdit />} />
+          <Route path="todos/new" element={<TodoForm />} />
+          <Route path="todos/:id/edit" element={<TodoForm />} />
           <Route path="*" element={<div>Page not found</div>} />
-
         </Route>
       </Routes>
     </BrowserRouter>
